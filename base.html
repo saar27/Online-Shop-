@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Your Online Shop</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <h1>Grant's Shop</h1>
+                <ul>
+                    <li><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{url_for('products')}}">Products</a></li>
+                    <li><a href="{{url_for('view_cart')}}">Cart</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact</a></li>
+                    {% if not current_user.is_authenticated: %}
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                    {% else: %}
+                    <li><a href="{{url_for('logout')}}">Log Out</a></li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <li>Welcome, {{ current_user.username }}</li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Online Shop. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

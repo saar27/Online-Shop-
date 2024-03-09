@@ -1,0 +1,276 @@
+/* Resetting some default styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styling */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #232f3e;
+    color: #ffffff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* Align items to the top right */
+    justify-content: flex-right;
+    align-items: right
+}
+
+nav ul li {
+    margin-left: 20px; /* Adjust the margin to your liking */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Featured products styling */
+
+#featured-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-reel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #e44d26 #ffffff; /* Amazon's orange color for scrollbar */
+}
+
+.product-reel::-webkit-scrollbar {
+    width: 12px;
+}
+
+.product-reel::-webkit-scrollbar-thumb {
+    background-color: #e44d26;
+}
+
+.product-reel::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.product-card {
+    flex: 0 0 calc(33.33% - 20px);
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    margin-top: 0;
+}
+
+.price {
+    color: #e44d26; /* Amazon's orange color */
+    font-weight: bold;
+}
+
+button {
+    background-color: #e44d26;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d84321; /* Darker shade for hover effect */
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+        order: -1;
+    }
+
+    #featured-products {
+        align-items: flex-start;
+    }
+
+    .product-reel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        flex: 0 0 100%;
+    }
+}
+
+/* Add this style to your existing style.css */
+
+#featured-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-cards {
+    display: flex;
+    gap: 20px; /* Adjust the gap as needed */
+    max-width: 800px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+}
+
+.product-card {
+    flex: 1;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    margin-top: 0;
+}
+
+.price {
+    color: #e44d26; /* Amazon's orange color */
+    font-weight: bold;
+}
+
+button {
+    background-color: #e44d26;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d84321; /* Darker shade for hover effect */
+}
+
+.product-card img {
+    width: 100%; /* Ensures the image takes up the full width of its container */
+    height: 200px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the aspect ratio of the images is maintained */
+}
+
+/* Add this style to your existing style.css */
+
+.flash-messages {
+    margin-bottom: 10px; /* Add space between flash messages and input boxes */
+}
+
+.flash-message {
+    color: red; /* Set flash message text color to red */
+    margin-bottom: 5px; /* Add space between flash messages */
+}
+
+
+/* cart.css */
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.product-image img {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px;
+    margin-right: 20px;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-details-inline {
+    margin: 0;
+    font-size: 14px; /* Adjust font size as needed */
+}

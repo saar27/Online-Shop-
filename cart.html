@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Shopping Cart
+{% endblock %}
+
+{% block content %}
+
+
+<main>
+    <h1>Shopping Cart</h1>
+<div class="cart-items">
+    {% for item in cart %}
+    <div class="cart-item">
+        <div class="product-image">
+            <img src="{{ item.img_url }}" alt="{{ item.product_name }}">
+        </div>
+        <div class="product-details">
+            <p class="product-name">{{ item.product_name }}</p>
+            <p class="product-details-inline">
+                Qty: {{ item.quantity }} |
+                Price: £{{ item.price }} |
+                Total: £{{ item.total }}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<p>Basket Total: £{{ basket_total }}</p>
+    <form action="/checkout" method="POST">
+        <input type="hidden" name="total" value="{{ basket_total }}">
+        <button type="submit" id="checkout-button">Checkout</button>
+      </form>
+</main>
+{% endblock %}
+

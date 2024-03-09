@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="featured-products">
+        <h2>All Products</h2>
+        <div class="product-cards">
+            {% for item in items %}
+                    <div class="product-card">
+                        <img src="{{ item.img_url }}" alt="{{ item.product_name }}">
+                        <div class="product-info">
+                            <h3>{{ item.product_name }}</h3>
+                            <p>{{ item.description }}</p>
+                            <p class="price">{{ item.price }}</p>
+                            <form action='/add_to_cart' method="POST">
+                                <input type="hidden" name="product_id" value="{{ item.id }}">
+                                <input type="number" name="quantity" value="1" min="1">
+                                <button type="submit">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
